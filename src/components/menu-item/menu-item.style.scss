@@ -1,0 +1,28 @@
+
+.menu-item {
+    flex: 1 0 31%;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+.content{
+    background-color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+
+.title{
+    text-transform: uppercase;
+}
+
