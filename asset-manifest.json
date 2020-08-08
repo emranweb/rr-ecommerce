@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/emranweb.github.io/rr-ecommerce/static/css/main.ba93b6dd.chunk.css",
-    "main.js": "/emranweb.github.io/rr-ecommerce/static/js/main.f7fbd4d6.chunk.js",
-    "main.js.map": "/emranweb.github.io/rr-ecommerce/static/js/main.f7fbd4d6.chunk.js.map",
-    "runtime-main.js": "/emranweb.github.io/rr-ecommerce/static/js/runtime-main.24e5714b.js",
-    "runtime-main.js.map": "/emranweb.github.io/rr-ecommerce/static/js/runtime-main.24e5714b.js.map",
-    "static/js/2.3a194bca.chunk.js": "/emranweb.github.io/rr-ecommerce/static/js/2.3a194bca.chunk.js",
-    "static/js/2.3a194bca.chunk.js.map": "/emranweb.github.io/rr-ecommerce/static/js/2.3a194bca.chunk.js.map",
-    "index.html": "/emranweb.github.io/rr-ecommerce/index.html",
-    "precache-manifest.78295e9375e75ea811127d6b64e17564.js": "/emranweb.github.io/rr-ecommerce/precache-manifest.78295e9375e75ea811127d6b64e17564.js",
-    "service-worker.js": "/emranweb.github.io/rr-ecommerce/service-worker.js",
-    "static/css/main.ba93b6dd.chunk.css.map": "/emranweb.github.io/rr-ecommerce/static/css/main.ba93b6dd.chunk.css.map",
-    "static/js/2.3a194bca.chunk.js.LICENSE.txt": "/emranweb.github.io/rr-ecommerce/static/js/2.3a194bca.chunk.js.LICENSE.txt"
+    "main.css": "/rr-ecommerce/static/css/main.ba93b6dd.chunk.css",
+    "main.js": "/rr-ecommerce/static/js/main.f7fbd4d6.chunk.js",
+    "main.js.map": "/rr-ecommerce/static/js/main.f7fbd4d6.chunk.js.map",
+    "runtime-main.js": "/rr-ecommerce/static/js/runtime-main.b6242d3f.js",
+    "runtime-main.js.map": "/rr-ecommerce/static/js/runtime-main.b6242d3f.js.map",
+    "static/js/2.3a194bca.chunk.js": "/rr-ecommerce/static/js/2.3a194bca.chunk.js",
+    "static/js/2.3a194bca.chunk.js.map": "/rr-ecommerce/static/js/2.3a194bca.chunk.js.map",
+    "index.html": "/rr-ecommerce/index.html",
+    "precache-manifest.e6f98a5defbfb02ef801672209a49072.js": "/rr-ecommerce/precache-manifest.e6f98a5defbfb02ef801672209a49072.js",
+    "service-worker.js": "/rr-ecommerce/service-worker.js",
+    "static/css/main.ba93b6dd.chunk.css.map": "/rr-ecommerce/static/css/main.ba93b6dd.chunk.css.map",
+    "static/js/2.3a194bca.chunk.js.LICENSE.txt": "/rr-ecommerce/static/js/2.3a194bca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.24e5714b.js",
+    "static/js/runtime-main.b6242d3f.js",
     "static/js/2.3a194bca.chunk.js",
     "static/css/main.ba93b6dd.chunk.css",
     "static/js/main.f7fbd4d6.chunk.js"
