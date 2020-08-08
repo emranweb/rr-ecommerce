@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/emranweb.github.io/rr-ecommerce/precache-manifest.f1cd5a7ba30c4c26a506ac3358390dc7.js"
+  "/emranweb.github.io/rr-ecommerce/precache-manifest.78295e9375e75ea811127d6b64e17564.js"
 );
 
 self.addEventListener('message', (event) => {

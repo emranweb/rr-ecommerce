@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7b4767177978cefaf837c797b1c2d440",
+    "revision": "2a0f6c00f2c77ae9b34e26f54de2a482",
     "url": "/emranweb.github.io/rr-ecommerce/index.html"
   },
   {
-    "revision": "8b41139e0194b6db4752",
-    "url": "/emranweb.github.io/rr-ecommerce/static/css/main.c6b500f8.chunk.css"
+    "revision": "51cc79e7d85d6d13929f",
+    "url": "/emranweb.github.io/rr-ecommerce/static/css/main.ba93b6dd.chunk.css"
   },
   {
     "revision": "1597b9e386462daaa2d8",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/emranweb.github.io/rr-ecommerce/static/js/2.3a194bca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8b41139e0194b6db4752",
+    "revision": "51cc79e7d85d6d13929f",
     "url": "/emranweb.github.io/rr-ecommerce/static/js/main.f7fbd4d6.chunk.js"
   },
   {
