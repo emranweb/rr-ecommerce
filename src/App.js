@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Homepage from "./pages/homepage/homepage.component.js";
 import {Route, Switch, Link} from "react-router-dom";
-
+import ShopPage from "./pages/shop/shop.component.js";
 
 
 function Hatpage (){
@@ -34,7 +34,7 @@ function App() {
       <Switch>
          <Route exact  path="/" component={Homepage}></Route>
          <Route  path="/hats" component={Hatpage}></Route>
-         <Route  path="/topic/:topicId" component={TopicDetails}></Route>
+         <Route  path="/shop" component={ShopPage}></Route>
       </Switch>
 
     </div>
