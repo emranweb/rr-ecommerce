@@ -13,8 +13,8 @@ function Header(){
            <Link to="/shop">
                Shop
            </Link>
-           <Link to="/shop">
-               Other
+           <Link to="/sign-in">
+               Sign In
            </Link>
        </div>
    </div>

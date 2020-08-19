@@ -4,6 +4,7 @@ import Homepage from "./pages/homepage/homepage.component.js";
 import {Route, Switch, Link} from "react-router-dom";
 import ShopPage from "./pages/shop/shop.component.js";
 import Header from "./components/header/header.component.js";
+import SignInPage from "./pages/sign-in/sign-in.page.js";
 
 
 
@@ -15,6 +16,7 @@ function App() {
          <Route exact  path="/" component={Homepage}></Route>
          <Route  path="/hats" component={ShopPage}></Route>
          <Route  path="/shop" component={ShopPage}></Route>
+         <Route  path="/sign-in" component={SignInPage}></Route>
       </Switch>
 
     </div>
