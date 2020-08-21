@@ -1,5 +1,6 @@
 import React from 'react';
 import "./sign-in.style.scss";
+import Button from "../button/button.component.js";
 
 
 
@@ -38,7 +39,10 @@ class SignIn extends React.Component {
                         <label>Password</label>
                         <input type="password" name="password" onChange={this.handleChange} value={this.state.password}  required placeholder="type your password" />
                      </div>
-                    <input className="submit-btn" type="submit" value="sign in"/>
+
+                     <Button type="submit">Sign In</Button>
+                     <Button type="submit">Google Sign In</Button>
+                    
                 </form>
             </div>
         )
