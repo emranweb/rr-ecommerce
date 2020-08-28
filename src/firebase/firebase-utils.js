@@ -13,19 +13,19 @@ const config = {
     appId: "1:784713141278:web:c0bddfcc7af958bb5ef20f"
   };
 
-
-
-firebase.initializeApp(config);
-
+  firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
-
 const provider = new firebase.auth.GoogleAuthProvider();
+const fbProvider = new firebase.auth.FacebookAuthProvider();
+
 provider.setCustomParameters({prompt:"select_account"});
+fbProvider.setCustomParameters({'display': 'popup'});
 
-export const signInWithGoogle = ()=> auth.signInWithPopup(provider);
+export const signInWithFb = ()=>auth.signInWithPopup(fbProvider);
+export const signInWithGoogle = ()=> auth.signInWithRedirect(provider);
+
+ export default firebase;
 
 
-export default firebase;

@@ -3,6 +3,7 @@ import "./sign-in.style.scss";
 import Button from "../button/button.component.js";
 import InputField from "../input-field/input.component.js";
 import {signInWithGoogle} from "../../firebase/firebase-utils.js";
+import {signInWithFb} from "../../firebase/firebase-utils.js";
 
 
 class SignIn extends React.Component {
@@ -44,6 +45,7 @@ class SignIn extends React.Component {
                      <Button type="submit">Sign In</Button>
                 </form>
                 <Button type="button" event={signInWithGoogle}>Sign In with Google</Button> 
+                <Button type="button" event={signInWithFb}>Sign In with FB</Button> 
             </div>
         )
     }
