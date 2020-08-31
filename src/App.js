@@ -5,7 +5,7 @@ import {Route, Switch, Link} from "react-router-dom";
 import ShopPage from "./pages/shop/shop.component.js";
 import Header from "./components/header/header.component.js";
 import SignInPage from "./pages/sign-in/sign-in.page.js";
-import {auth} from "./firebase/firebase-utils.js";
+import {auth, createUserProfileDoc} from "./firebase/firebase-utils.js";
 
 
 
@@ -21,9 +21,11 @@ class App extends React.Component{
     unSubscribeFromAuth = null;
 
     componentDidMount(){
-      this.unSubscribeFromAuth= auth.onAuthStateChanged(user=>{
-         this.setState({currentUser:user});
+      this.unSubscribeFromAuth= auth.onAuthStateChanged(async user=>{
+         createUserProfileDoc(user);
+         console.log(user)
         })
+       
     }
 
     componentWillUnmount(){
