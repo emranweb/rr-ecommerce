@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import "./header.style.scss";
+import {auth} from "../../firebase/firebase-utils.js";
 
-
-function Header(){
+function Header(props){
   return(
    <div className="header">
        <div className="logo">
@@ -13,9 +13,9 @@ function Header(){
            <Link to="/shop">
                Shop
            </Link>
-           <Link to="/sign-in">
-               Sign In
-           </Link>
+           {
+               props.currentUser ? <div onClick={()=>auth.signOut()}>Sign Out</div> : <Link to="/sign-in">Sign In</Link>
+           }
        </div>
    </div>
   )

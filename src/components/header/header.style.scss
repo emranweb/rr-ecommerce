@@ -17,9 +17,15 @@
     text-decoration: none;
 }
 
-.menu a{
+.menu a, .menu div{
     font-size: 20px;
     padding: 0px 15px;
     text-decoration: none;
     color: #1b262c;
+    display: inline-block;
+    
+    &:hover{
+     cursor: pointer;
+    }
 }
+
