@@ -1,5 +1,6 @@
 import React from "react";
 import MenuItem from "./MenuItem";
+import Grid from "@material-ui/core/Grid";
 
 class Directory extends React.Component {
   constructor() {
@@ -38,6 +39,13 @@ class Directory extends React.Component {
           id: 5,
           linkUrl: "",
         },
+        {
+          title: "winter",
+          imageUrl: "https://i.ibb.co/R70vBrQ/winter.png",
+          size: "large",
+          id: 5,
+          linkUrl: "",
+        },
       ],
     };
   }
@@ -45,14 +53,16 @@ class Directory extends React.Component {
   render() {
     return (
       <div className="directory-container">
-        {this.state.section.map((item) => (
-          <MenuItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            imageUrl={item.imageUrl}
-          />
-        ))}
+        <Grid container spacing={2}>
+          {this.state.section.map((item) => (
+            <Grid item xs={4} key={item.title}>
+              <MenuItem
+                title={item.title}
+                imageUrl={item.imageUrl}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </div>
     );
   }

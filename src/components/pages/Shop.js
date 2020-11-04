@@ -16,7 +16,6 @@ class Shop extends React.Component {
         {this.state.collection.map((item) => (
           <CollectionPreview
             key={item.id}
-            id={item.id}
             title={item.title}
             items={item.items}
           />
