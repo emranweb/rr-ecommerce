@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Homepage from "./pages/homepage/homepage.component.js";
+import Homepage from "./components/pages/Home";
 import { Route, Switch, Link } from "react-router-dom";
-import ShopPage from "./pages/shop/shop.component.js";
-import Header from "./components/header/header.component.js";
-import SignInPage from "./pages/sign-in/sign-in.page.js";
+import ShopPage from "./components/pages/Shop";
+import Header from "./components/helper/Header.js";
+import SignInPage from "./components/pages/SignIn";
 import { auth, createUserProfileDoc } from "./firebase/firebase-utils.js";
 import Container from "@material-ui/core/Container";
-import NotFound from "./components/404/404";
+import NotFound from "./components/utils/404";
 
 class App extends React.Component {
   constructor() {

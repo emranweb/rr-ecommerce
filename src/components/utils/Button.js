@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import "./button.style.scss";
 import ButtonUI from "@material-ui/core/Button";
 
 const useStyle = makeStyles((theme) => ({

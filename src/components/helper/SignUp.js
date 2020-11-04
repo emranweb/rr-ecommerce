@@ -1,6 +1,6 @@
 import React from 'react'
-import InputField from "../input-field/input.component.js";
-import Button from "../button/button.component.js";
+import InputField from "../utils/Input";
+import Button from "../utils/Button";
 import {auth,createUserProfileDoc} from "../../firebase/firebase-utils.js";
 
 

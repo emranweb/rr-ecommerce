@@ -1,5 +1,5 @@
 import React from 'react'
-import "./collection-item.component.style.scss"
+
 
 function CollectionItem(props){
   return(
