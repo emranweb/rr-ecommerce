@@ -1,6 +1,7 @@
 import React from "react";
-import InputField from "../utils/Input";
 import { auth, createUserProfileDoc } from "../../firebase/firebase-utils.js";
+import TextField from "@material-ui/core/TextField";
+import Button from "../utils/Button";
 
 class SignUp extends React.Component {
   constructor() {
@@ -41,65 +42,52 @@ class SignUp extends React.Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
   };
 
   render() {
     return (
       <div className="sign-up-wrapper">
-        <h2>I Dont Have any account</h2>
-        <h3>Please Sign Up With Email</h3>
+        <h2>Don't Have any account</h2>
+        <h5>Please Sign Up With Email</h5>
 
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <InputField
-              type="text"
-              value={this.state.displayName}
-              handleChange={this.handleChange}
-              name="displayName"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
+          <TextField
+            type="text"
+            value={this.state.displayName}
+            onChange={this.handleChange}
+            name="displayName"
+            label="Name"
+            fullWidth
+          />
 
-          <div className="form-group">
-            <label>Email</label>
-            <InputField
-              type="email"
-              value={this.state.email}
-              handleChange={this.handleChange}
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
+          <TextField
+            type="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            name="email"
+            label="Email"
+            fullWidth
+          />
 
-          <div className="form-group">
-            <label>Password</label>
-            <InputField
-              type="password"
-              value={this.state.password}
-              handleChange={this.handleChange}
-              name="password"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
+          <TextField
+            type="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            name="password"
+            label="Password"
+            fullWidth
+          />
 
-          <div className="form-group">
-            <label>Confirm Password</label>
-            <InputField
-              type="password"
-              value={this.state.confirmPassword}
-              handleChange={this.handleChange}
-              name="confirmPassword"
-              placeholder="confirm your password"
-              required
-            />
-          </div>
+          <TextField
+            type="password"
+            value={this.state.confirmPassword}
+            onChange={this.handleChange}
+            name="confirmPassword"
+            label="Password"
+            fullWidth
+          />
 
-          <button type="submit">Sign Up</button>
+         <Button type="submit">Sign Up</Button>
         </form>
       </div>
     );

@@ -1,9 +1,8 @@
 import React from "react";
 
 import Button from "../utils/Button";
-import InputField from "../utils/Input";
 import { signInWithGoogle, signInWithFb } from "../../firebase/firebase-utils";
-
+import TextField from "@material-ui/core/TextField";
 class SignIn extends React.Component {
   constructor() {
     super();
@@ -28,28 +27,25 @@ class SignIn extends React.Component {
       <div className="sign-in-left">
         <h2>Sign in with Email and Password</h2>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Email</label>
-            <InputField
-              type="email"
-              value={this.state.email}
-              handleChange={this.handleChange}
-              name="email"
-              placeholder="User Name"
-            />
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <InputField
-              type="password"
-              value={this.state.password}
-              name="password"
-              handleChange={this.handleChange}
-              placeholder="Password"
-            />
-          </div>
 
-          <Button type="submit">Sign In</Button>
+          <TextField
+            value={this.state.email}
+            onChange={this.handleChange}
+            name="email"
+            label="Email"
+            fullWidth
+          />
+
+          <TextField
+            type="password"
+            value={this.state.password}
+            name="password"
+            onChange={this.handleChange}
+            label="Password"
+            fullWidth
+          />
+
+          <Button varia type="submit">Sign In</Button>
         </form>
         <Button type="button" event={signInWithGoogle}>
           Sign In with Google
