@@ -7,7 +7,7 @@ import Header from "./components/helper/Header.js";
 import SignInPage from "./components/pages/SignIn";
 import Container from "@material-ui/core/Container";
 import NotFound from "./components/utils/404";
-import { auth } from "./firebase/firebase-utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 
 class App extends React.Component {
   constructor() {
@@ -17,11 +17,18 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    auth.onAuthStateChanged((user) => {
+  unSuscribeFromAuth = null;
+
+  componentDidMount =()=> {
+   this.unSuscribeFromAuth=auth.onAuthStateChanged(async (user) => {
       this.setState({ currentUser: user });
-      console.log(user);
+      createUserProfileDocument(user)
     });
+
+  }
+
+  componentWillUnmount=()=>{
+      this.unSuscribeFromAuth()
   }
 
   render() {
@@ -40,7 +47,7 @@ class App extends React.Component {
               <Route path="/sneakers" component={ShopPage}></Route>
               <Route path="/jackets" component={ShopPage}></Route>
               <Route path="/shop" component={ShopPage}></Route>
-              <Route path="/sign-in" component={SignInPage}></Route>
+              <Route path="/sign-in" component={()=> <SignInPage currentUser={this.state.currentUser}/> }></Route>
               <Route component={NotFound}></Route>
             </Switch>
           </Container>

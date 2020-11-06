@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyCd8DT1EISD91cD50lCwntkUXOAFI8yMkY",
   authDomain: "rrshopdb.firebaseapp.com",
@@ -13,22 +12,41 @@ const firebaseConfig = {
   appId: "1:784713141278:web:c0bddfcc7af958bb5ef20f",
 };
 
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
 export const auth = firebase.auth();
-export const firestore = firebase.firestore;
-
-
+export const firestore = firebase.firestore();
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
 provider.setCustomParameters({
-  'prompt': 'select_account'
+  prompt: "select_account",
 });
 
-export const signInWithGoogle =  ()=> auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+export const createUserProfileDocument = async (userAuth, aditionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`/users/${userAuth}`);
+  
+  const snapshot = await userRef.get();
+
+  if (!snapshot.exists) {
+    const { displayName, email } = userAuth;
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        ...aditionalData,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  return userRef;
+};
 
 export default firebase;
