@@ -1,8 +1,10 @@
 import React from "react";
 
-import Button from "../utils/Button";
-import { signInWithGoogle, signInWithFb } from "../../firebase/firebase-utils";
+import Button from "@material-ui/core/Button";
+import { signInWithGoogle } from "../../firebase/firebase-utils";
+
 import TextField from "@material-ui/core/TextField";
+
 class SignIn extends React.Component {
   constructor() {
     super();
@@ -27,7 +29,6 @@ class SignIn extends React.Component {
       <div className="sign-in-left">
         <h2>Sign in with Email and Password</h2>
         <form onSubmit={this.handleSubmit}>
-
           <TextField
             value={this.state.email}
             onChange={this.handleChange}
@@ -45,13 +46,25 @@ class SignIn extends React.Component {
             fullWidth
           />
 
-          <Button varia type="submit">Sign In</Button>
+          <Button
+            variant="contained"
+            size="large"
+            className="signin-btn"
+            color="primary"
+            type="submit"
+          >
+            Sign In
+          </Button>
         </form>
-        <Button type="button" event={signInWithGoogle}>
-          Sign In with Google
-        </Button>
-        <Button type="button" event={signInWithFb}>
-          Sign In with FB
+
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          type="submit"
+          className="google-signin-btn"
+          onClick={()=>signInWithGoogle()}>
+          Sign In With Google
         </Button>
       </div>
     );

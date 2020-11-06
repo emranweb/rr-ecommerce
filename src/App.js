@@ -1,13 +1,13 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Homepage from "./components/pages/Home";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import ShopPage from "./components/pages/Shop";
 import Header from "./components/helper/Header.js";
 import SignInPage from "./components/pages/SignIn";
-import { auth, createUserProfileDoc } from "./firebase/firebase-utils.js";
 import Container from "@material-ui/core/Container";
 import NotFound from "./components/utils/404";
+import { auth } from "./firebase/firebase-utils";
 
 class App extends React.Component {
   constructor() {
@@ -17,25 +17,20 @@ class App extends React.Component {
     };
   }
 
-  unSubscribeFromAuth = null;
-
   componentDidMount() {
-    this.unSubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
-      createUserProfileDoc(user);
+    auth.onAuthStateChanged((user) => {
+      this.setState({ currentUser: user });
+      console.log(user);
     });
-  }
-
-  componentWillUnmount() {
-    this.unSubscribeFromAuth();
   }
 
   render() {
     return (
       <div className="main-wrapper">
-         <Header currentUser={this.state.currentUser} />
+        <Header currentUser={this.state.currentUser} />
         <div className="content-wrappper">
           <Container maxWidth="lg">
-            <Switch >
+            <Switch>
               <Route exact path="/" component={Homepage}></Route>
               <Route path="/hats" component={ShopPage}></Route>
               <Route path="/jackets" component={ShopPage}></Route>

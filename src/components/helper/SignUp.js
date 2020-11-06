@@ -1,5 +1,4 @@
 import React from "react";
-import { auth, createUserProfileDoc } from "../../firebase/firebase-utils.js";
 import TextField from "@material-ui/core/TextField";
 import Button from "../utils/Button";
 
@@ -15,26 +14,7 @@ class SignUp extends React.Component {
   }
 
   handleSubmit = async (event) => {
-    event.preventDefault();
-    const { displayName, email, password, confirmPassword } = this.state;
-    if (password !== confirmPassword) {
-      alert("Password don't Match");
-      return;
-    }
-
-    try {
-      const { user } = auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDoc(user, { displayName });
-
-      this.setState({
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.log(error);
-    }
+   
   };
 
   handleChange = (event) => {
