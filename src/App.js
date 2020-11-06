@@ -19,17 +19,16 @@ class App extends React.Component {
 
   unSuscribeFromAuth = null;
 
-  componentDidMount =()=> {
-   this.unSuscribeFromAuth=auth.onAuthStateChanged(async (user) => {
+  componentDidMount = () => {
+    this.unSuscribeFromAuth = auth.onAuthStateChanged(async (user) => {
       this.setState({ currentUser: user });
-      createUserProfileDocument(user)
+      createUserProfileDocument(user);
     });
+  };
 
-  }
-
-  componentWillUnmount=()=>{
-      this.unSuscribeFromAuth()
-  }
+  componentWillUnmount = () => {
+    this.unSuscribeFromAuth();
+  };
 
   render() {
     return (
@@ -47,7 +46,12 @@ class App extends React.Component {
               <Route path="/sneakers" component={ShopPage}></Route>
               <Route path="/jackets" component={ShopPage}></Route>
               <Route path="/shop" component={ShopPage}></Route>
-              <Route path="/sign-in" component={()=> <SignInPage currentUser={this.state.currentUser}/> }></Route>
+              <Route
+                path="/sign-in"
+                component={() => (
+                  <SignInPage currentUser={this.state.currentUser} />
+                )}
+              ></Route>
               <Route component={NotFound}></Route>
             </Switch>
           </Container>
