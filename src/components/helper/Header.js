@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import { connect } from "react-redux";
 
 function Header(props) {
   return (
@@ -38,4 +39,8 @@ function Header(props) {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+  currentUser: state.user,
+});
+
+export default connect(mapStateToProps)(Header);
