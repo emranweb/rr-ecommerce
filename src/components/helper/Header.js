@@ -8,13 +8,16 @@ import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
 import CartIcon from "./CartIcon";
 import CartDropDown from "./CartDropDown";
-import cartAction from "../../redux/cartAction";
+import cartIconAction from "../../redux/action/cartIconAction";
+import cartAction from "../../redux/action/cartIconAction";
 
 function Header(props) {
-
-  const showCart= (props)=>{
-    
-  }
+  const showCart = () => {
+    if (props.cartIcon) {
+      return props.cartAction(false);
+    }
+    return props.cartAction(true);
+  };
 
   return (
     <div className="header-wrapper">
@@ -43,7 +46,7 @@ function Header(props) {
                 <CartIcon />
               </Button>
             </div>
-            <CartDropDown show={true}/>
+            {props.cartIcon ? <CartDropDown /> : null}
           </Toolbar>
         </Container>
       </AppBar>
@@ -51,15 +54,13 @@ function Header(props) {
   );
 }
 
-
-const mapDispatchToProps  = dispatch=>({
-   cartChange: item=>dispatch(cartAction(item))
-})
-
+const mapDisPatchToProps = (dispatch) => ({
+  cartAction: (data) => dispatch(cartIconAction(data)),
+});
 
 const mapStateToProps = (state) => ({
   currentUser: state.user,
-  cartReducer: state.cart
+  cartIcon: state.cartIcon,
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDisPatchToProps)(Header);

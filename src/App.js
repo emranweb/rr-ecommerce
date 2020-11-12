@@ -9,7 +9,7 @@ import Container from "@material-ui/core/Container";
 import NotFound from "./components/utils/404";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { connect } from "react-redux";
-import setCurrentUserAction from "./redux/userAction";
+import setCurrentUserAction from "./redux/action/userAction";
 
 class App extends React.Component {
   constructor() {
