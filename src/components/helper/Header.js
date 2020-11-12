@@ -6,8 +6,16 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
+import CartIcon from "./CartIcon";
+import CartDropDown from "./CartDropDown";
+import cartAction from "../../redux/cartAction";
 
 function Header(props) {
+
+  const showCart= (props)=>{
+    
+  }
+
   return (
     <div className="header-wrapper">
       <AppBar position="static">
@@ -31,7 +39,11 @@ function Header(props) {
                   <Link to="/sign-in">Sign In</Link>{" "}
                 </Button>
               )}
+              <Button onClick={showCart}>
+                <CartIcon />
+              </Button>
             </div>
+            <CartDropDown show={true}/>
           </Toolbar>
         </Container>
       </AppBar>
@@ -39,8 +51,15 @@ function Header(props) {
   );
 }
 
+
+const mapDispatchToProps  = dispatch=>({
+   cartChange: item=>dispatch(cartAction(item))
+})
+
+
 const mapStateToProps = (state) => ({
   currentUser: state.user,
+  cartReducer: state.cart
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

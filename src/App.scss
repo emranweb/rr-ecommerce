@@ -61,3 +61,21 @@ body {
     margin-top: 20px;
   }
 }
+
+.cart-icon {
+  border: 1px solid #fff;
+  margin:0px;
+  padding: 0px 10px;
+}
+
+.drop-down-area{
+  position: absolute;
+    top: 64px;
+    width: 300px;
+    height: 400px;
+    background: red;
+    right: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+

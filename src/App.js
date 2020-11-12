@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Homepage from "./components/pages/Home";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import ShopPage from "./components/pages/Shop";
 import Header from "./components/helper/Header.js";
 import SignInPage from "./components/pages/SignIn";
@@ -22,12 +22,12 @@ class App extends React.Component {
     this.unSuscribeFromAuth = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const userRef = await createUserProfileDocument(user);
-        userRef.onSnapshot(snap=>{
+        userRef.onSnapshot((snap) => {
           this.props.setCurrentUser({
-            id:snap.id,
-            ...snap.data()
-          })
-        })
+            id: snap.id,
+            ...snap.data(),
+          });
+        });
         this.props.setCurrentUser(user);
       }
     });
@@ -38,7 +38,6 @@ class App extends React.Component {
   };
 
   render() {
-  
     return (
       <div className="main-wrapper">
         <Header />
@@ -54,7 +53,14 @@ class App extends React.Component {
               <Route path="/sneakers" component={ShopPage}></Route>
               <Route path="/jackets" component={ShopPage}></Route>
               <Route path="/shop" component={ShopPage}></Route>
-              <Route path="/sign-in" component={() => <SignInPage />}></Route>
+              <Route
+                path="/sign-in"
+                exact
+                render={() => this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
+                   
+                  
+                }
+              ></Route>
               <Route component={NotFound}></Route>
             </Switch>
           </Container>
@@ -68,4 +74,8 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUserAction(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = (state) => ({
+  currentUser: state.user,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
