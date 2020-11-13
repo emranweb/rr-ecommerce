@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 import CartIcon from "./CartIcon";
 import CartDropDown from "./CartDropDown";
 import cartIconAction from "../../redux/action/cartIconAction";
-import cartAction from "../../redux/action/cartIconAction";
 
 function Header(props) {
   const showCart = () => {

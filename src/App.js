@@ -12,9 +12,6 @@ import { connect } from "react-redux";
 import setCurrentUserAction from "./redux/action/userAction";
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
 
   unSuscribeFromAuth = null;
 
