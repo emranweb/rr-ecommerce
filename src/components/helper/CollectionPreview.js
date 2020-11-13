@@ -16,6 +16,7 @@ function CollectionPreview(props) {
                 name={item.name}
                 imgUrl={item.imageUrl}
                 price={item.price}
+                id={Math.random().toString(36).substr(2, 9)}
               />
           ))}
       </Grid>
