@@ -11,7 +11,7 @@ const CartDropDown = (props) => {
         {props.cartItems.map((item) => {
           return (
             <div className="dropdown_item" key={Math.random()*10}>
-              <img src={item.imgUrl} alt="image" />
+              <img src={item.imgUrl} alt="img" />
               <span>{item.price}</span>
               <span>{item.name}</span>
             </div>
