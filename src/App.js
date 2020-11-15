@@ -12,7 +12,6 @@ import { connect } from "react-redux";
 import setCurrentUserAction from "./redux/action/userAction";
 
 class App extends React.Component {
-
   unSuscribeFromAuth = null;
 
   componentDidMount = () => {
@@ -53,9 +52,8 @@ class App extends React.Component {
               <Route
                 path="/sign-in"
                 exact
-                render={() => this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
-                   
-                  
+                render={() =>
+                  this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
                 }
               ></Route>
               <Route component={NotFound}></Route>
