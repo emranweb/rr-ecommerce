@@ -8,18 +8,18 @@ const cartItemsReducer = (state = [], action) => {
 
 export default cartItemsReducer;
 
-const addToCart = (stateItems, payload) => {
-  const existItem = stateItems.find((item) => {
+const addToCart = (items, payload) => {
+  const exitItem = items.find((item) => {
     return item.id === payload.id;
   });
 
-  if (existItem) {
-    return stateItems.map((item) => {
+  if (exitItem) {
+    return items.map((item) => {
       return item.id === payload.id
         ? { ...item, quantity: item.quantity + 1 }
         : item;
     });
   }
 
-  return [...stateItems, { ...payload, quantity: 1 }];
+  return [...items, { ...payload, quantity: 1 }];
 };
