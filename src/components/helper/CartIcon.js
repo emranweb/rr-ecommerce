@@ -1,7 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const CartIcon = () => {
-  return <div className="cart-icon">0</div>;
+const CartIcon = (props) => {
+  return (
+    <div className="cart-icon">
+      {props.cartItems.reduce((aa, item) => aa + item.quantity, 0)}
+    </div>
+  );
 };
 
-export default CartIcon;
+const mapStateToProps = (state) => ({
+  cartItems: state.cartItems,
+});
+
+export default connect(mapStateToProps)(CartIcon);

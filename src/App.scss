@@ -73,7 +73,8 @@ body {
     top: 64px;
     width: 300px;
     height: 400px;
-    background: red;
+    background: #fff;
+    border:1px solid #000;
     right: 30px;
     overflow-y: scroll;
 }
@@ -82,8 +83,26 @@ body {
 .drop-down-area{
   .dropdown_item {
     img{
-      width: 50px;
-      height: 50px;
+      width: 90px;
+      height: 90px;
     }
   }
+}
+
+.dropdown_item{
+  padding: 10px;
+  display: flex;
+}
+
+.dropdown_item-right{
+  color: #000;
+  padding-left: 10px;
+}
+
+.dropdwon_btn{
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 0px;
+  position: absolute !important;
+  bottom: 0px !important;
 }
