@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import {selectCatItems} from "../../redux/cartReselect";
 import Button from "@material-ui/core/Button";
 
 const CartDropDown = (props) => {
-  console.log(props.cartItems);
+  
   return (
     <div className="drop-down-area">
       <div className="card-item">
@@ -30,7 +30,7 @@ const CartDropDown = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  cartItems: state.cartItems,
+  cartItems: selectCatItems(state)
 });
 
 export default connect(mapStateToProps)(CartDropDown);
