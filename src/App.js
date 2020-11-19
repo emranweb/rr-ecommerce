@@ -10,7 +10,7 @@ import NotFound from "./components/utils/404";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { connect } from "react-redux";
 import setCurrentUserAction from "./redux/action/userAction";
-
+import Checkout from "./components/pages/Checkout";
 class App extends React.Component {
   unSuscribeFromAuth = null;
 
@@ -49,6 +49,7 @@ class App extends React.Component {
               <Route path="/sneakers" component={ShopPage}></Route>
               <Route path="/jackets" component={ShopPage}></Route>
               <Route path="/shop" component={ShopPage}></Route>
+              <Route path="/checkout" component={Checkout}></Route>
               <Route
                 path="/sign-in"
                 exact

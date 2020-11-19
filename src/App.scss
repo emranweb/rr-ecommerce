@@ -106,3 +106,12 @@ body {
   position: absolute !important;
   bottom: 0px !important;
 }
+
+.cart-empty-message{
+  color: red !important;
+    display: flex;
+    display: block;
+    margin: 30px auto;
+    font-size: 20px;
+    text-align: center;
+}
