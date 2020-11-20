@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+img{
+  max-width: 100%;
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 16px;
@@ -77,6 +81,7 @@ body {
     border:1px solid #000;
     right: 30px;
     overflow-y: scroll;
+    z-index: 2;
 }
 
 
@@ -114,4 +119,56 @@ body {
     margin: 30px auto;
     font-size: 20px;
     text-align: center;
+}
+
+
+.checkout{
+  margin-top: 50px;
+}
+
+
+.checkout_area{
+  max-width: 70%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.checkout_header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  span{
+    max-width: 20%;
+    flex: 1;
+  }
+}
+
+.cart_items{
+  display: flex;
+  justify-content: space-between;
+  span{
+    max-width: 20%;
+    flex: 1;
+  }
+  img{
+    flex: 1;
+    width: 100px;
+  }
+}
+
+.checkout_footer {
+  margin-top: 30px;
+  border-top: 2px solid #000;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ h1{
+   margin-right: 20px;
+ }
+ h3{
+   font-size: 30px;
+ }
+
 }

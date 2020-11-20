@@ -9,7 +9,7 @@ const CartDropDown = (props) => {
   console.log(props.dispatch);
   return (
     <div className="drop-down-area">
-      <div className="card-item">
+      <div className="card-items">
         {props.cartItems.length ? (
           props.cartItems.map((item) => {
             return (
