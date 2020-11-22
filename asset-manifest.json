@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rr-ecommerce/static/css/main.ba93b6dd.chunk.css",
-    "main.js": "/rr-ecommerce/static/js/main.c0b66bb2.chunk.js",
-    "main.js.map": "/rr-ecommerce/static/js/main.c0b66bb2.chunk.js.map",
+    "main.css": "/rr-ecommerce/static/css/main.854be8d0.chunk.css",
+    "main.js": "/rr-ecommerce/static/js/main.f32c62d5.chunk.js",
+    "main.js.map": "/rr-ecommerce/static/js/main.f32c62d5.chunk.js.map",
     "runtime-main.js": "/rr-ecommerce/static/js/runtime-main.b6242d3f.js",
     "runtime-main.js.map": "/rr-ecommerce/static/js/runtime-main.b6242d3f.js.map",
-    "static/js/2.2aa7defa.chunk.js": "/rr-ecommerce/static/js/2.2aa7defa.chunk.js",
-    "static/js/2.2aa7defa.chunk.js.map": "/rr-ecommerce/static/js/2.2aa7defa.chunk.js.map",
+    "static/js/2.c84af54e.chunk.js": "/rr-ecommerce/static/js/2.c84af54e.chunk.js",
+    "static/js/2.c84af54e.chunk.js.map": "/rr-ecommerce/static/js/2.c84af54e.chunk.js.map",
     "index.html": "/rr-ecommerce/index.html",
-    "precache-manifest.8f226535e38ee0118c08409620056fd3.js": "/rr-ecommerce/precache-manifest.8f226535e38ee0118c08409620056fd3.js",
+    "precache-manifest.1013aa93e1aa1294b8ae6bc447565d6f.js": "/rr-ecommerce/precache-manifest.1013aa93e1aa1294b8ae6bc447565d6f.js",
     "service-worker.js": "/rr-ecommerce/service-worker.js",
-    "static/css/main.ba93b6dd.chunk.css.map": "/rr-ecommerce/static/css/main.ba93b6dd.chunk.css.map",
-    "static/js/2.2aa7defa.chunk.js.LICENSE.txt": "/rr-ecommerce/static/js/2.2aa7defa.chunk.js.LICENSE.txt"
+    "static/css/main.854be8d0.chunk.css.map": "/rr-ecommerce/static/css/main.854be8d0.chunk.css.map",
+    "static/js/2.c84af54e.chunk.js.LICENSE.txt": "/rr-ecommerce/static/js/2.c84af54e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b6242d3f.js",
-    "static/js/2.2aa7defa.chunk.js",
-    "static/css/main.ba93b6dd.chunk.css",
-    "static/js/main.c0b66bb2.chunk.js"
+    "static/js/2.c84af54e.chunk.js",
+    "static/css/main.854be8d0.chunk.css",
+    "static/js/main.f32c62d5.chunk.js"
   ]
 }
