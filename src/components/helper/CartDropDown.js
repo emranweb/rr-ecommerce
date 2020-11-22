@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 import cartAction from "../../redux/action/cartIconAction";
 
 const CartDropDown = (props) => {
-  console.log(props.dispatch);
   return (
     <div className="drop-down-area">
       <div className="card-items">
