@@ -11,12 +11,12 @@ import CartDropDown from "./CartDropDown";
 import cartIconAction from "../../redux/action/cartIconAction";
 
 function Header(props) {
+
   const showCart = () => {
-    if (props.cartIcon) {
-      return props.cartAction(false);
-    }
-    return props.cartAction(true);
+    props.cartAction(true);
+
   };
+
 
   return (
     <div className="header-wrapper">
@@ -59,7 +59,7 @@ const mapDisPatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   currentUser: state.user,
-  //cartIcon: state.cartIcon,
+  cartIcon : state.cart.cartIcon
 });
 
 export default connect(mapStateToProps, mapDisPatchToProps)(Header);
