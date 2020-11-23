@@ -1,14 +1,11 @@
 import { combineReducers } from "redux";
 
-import cartIconReducer from "./reducer/cartIconReducer";
 import userReducer from "./reducer/userReducer";
-import cartItems from "./reducer/cartItemsReducer";
-import cartRemoveReducer from "./reducer/cartRemoveReducer";
+import cartReducer from "./reducer/cartReducer";
+
 
 
 export default combineReducers({
   user: userReducer,
-  cartIcon: cartIconReducer,
-  cartItems: cartItems,
-  cartRemove:cartRemoveReducer,
+  cart: cartReducer
 });

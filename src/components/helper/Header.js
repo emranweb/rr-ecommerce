@@ -59,7 +59,7 @@ const mapDisPatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   currentUser: state.user,
-  cartIcon: state.cartIcon,
+  //cartIcon: state.cartIcon,
 });
 
 export default connect(mapStateToProps, mapDisPatchToProps)(Header);
