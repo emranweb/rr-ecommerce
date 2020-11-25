@@ -1,7 +1,7 @@
 import React from "react";
 import { selectCatItems, cartPriceCount } from "../../redux/cartReselect";
 import { connect } from "react-redux";
-
+import cartItemRemove from "../../redux/action/cartRemove";
 
 function Checkout(props) {
   return (
@@ -23,7 +23,7 @@ function Checkout(props) {
                   <span>{item.name}</span>
                   <span>{item.price}</span>
                   <span>{item.quantity}</span>
-                  <span>X</span>
+                  <span onClick={()=>props.cartRemove(item)}>X</span>
               </div>
             );
           })}
@@ -37,6 +37,10 @@ function Checkout(props) {
   );
 }
 
+const mapDispatchToProps=dispatch=>({
+  cartRemove: item=>dispatch(cartItemRemove(item))
+})
+
 
 const mapStateToProps = (state) => ({
   cartItems: selectCatItems(state),
@@ -45,4 +49,4 @@ const mapStateToProps = (state) => ({
 
 
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

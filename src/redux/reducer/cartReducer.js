@@ -4,11 +4,12 @@ const init_state = {
 };
 
 const cartReducer = (state = init_state, action) => {
+
   switch (action.type) {
     case "cart_show":
       return {
         ...state,
-        cartIcon: action.payload,
+        cartIcon: action.payload
       };
 
     case "cart_items":
@@ -16,6 +17,12 @@ const cartReducer = (state = init_state, action) => {
         ...state,
         cartItems: addToCart(state.cartItems, action.payload),
       };
+
+      case "cart_remove" :
+        return {
+          ...state,
+          cartItems: state.cartItems.filter(item=>item.id!==action.payload.id)
+        }
 
     default:
       return state;
