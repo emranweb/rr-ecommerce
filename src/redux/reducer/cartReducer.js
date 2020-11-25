@@ -38,5 +38,4 @@ const addToCart = (items, payload) => {
   return [...items, { ...payload, quantity: 1 }];
 };
 
-
 export default cartReducer;
