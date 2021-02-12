@@ -1,8 +1,12 @@
-import React from 'react' ;
+import React from "react";
+import HomeDirectory from './../com/directory';
 
-
-function Home (){
-    return <h1>Home page</h1>
-}
+const Home = () => {
+  return (
+    <div className="home-page">
+    <HomeDirectory />
+    </div>
+  );
+};
 
 export default Home;
