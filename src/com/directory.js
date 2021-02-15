@@ -12,20 +12,20 @@ const DirectoryData = [
     title: "jackets",
     imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
     id: 2,
-    linkUrl: "",
+    linkUrl: "jackets",
   },
   {
     title: "sneakers",
     imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
     id: 3,
-    linkUrl: "",
+    linkUrl: "sneakers",
   },
   {
     title: "womens",
     imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
     size: "large",
     id: 4,
-    linkUrl: "",
+    linkUrl: "womens",
   }
 ];
 
@@ -35,7 +35,7 @@ const HomeDirectory = () => {
   return (
     <div className="directory-menu">
       {data.map((item) => {
-        return <Item key={item.id} title={item.title} />;
+        return <Item key={item.id} title={item.title} linkUrl={item.linkUrl}/>;
       })}
     </div>
   );

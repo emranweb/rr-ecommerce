@@ -11,11 +11,19 @@ const NotFound = ()=>{
    )
 }
 
+const Hats= ()=>{
+  return (
+    <h1>Hats Page</h1>
+  )
+}
+
+
 class App extends React.Component{
  render(){
    return (
     <Switch>
        <Route exact path="/" component={Home} />
+       <Route exact path="/hats" component={Hats} />
        <Route component={NotFound} />
     </Switch>
    )
