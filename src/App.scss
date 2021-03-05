@@ -3,7 +3,7 @@
   padding: 0px;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -13,14 +13,32 @@ body {
   font-weight: normal;
 }
 
-.directory-menu{
+.directory-menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
   grid-gap: 20px;
 }
 
- .item{
-   background-color: #f7a1a1;
-   padding: 50px 10px;
- }
+.item {
+  background-color: #f7a1a1;
+  padding: 50px 10px;
+}
+
+
+
+
+.preview_items{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  padding: 8px 20px;
+  border: none;
+  background: #9e9e9e;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ffffff;
+
+}
