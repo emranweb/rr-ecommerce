@@ -8,6 +8,7 @@ import Home from "./pages/home.js";
 import Shop from "./pages/shop.js";
 import SignIn from "./pages/signIn";
 import {auth} from "./firebase/config";
+
 const NotFound = () => {
   return <h1>Page Not Found</h1>;
 };
@@ -17,13 +18,7 @@ const Hats = () => {
 };
 
 function App() {
-  const [user,setUser] = useState(null);
-
-  useEffect(()=>{
-    auth.onAuthStateChanged(user=>{
-      setUser(user);
-    })
-  },[user])
+  
 
   return (
     <div>

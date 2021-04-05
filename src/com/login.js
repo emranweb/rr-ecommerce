@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import { GoogleSignIn, auth } from "../firebase/config";
 import { login } from "../redux/user";
 import { useSelector, useDispatch } from "react-redux";
+import { createUserProfile } from "../firebase/config";
 
 const Login = () => {
   const user = useSelector((state) => state.user.user);
@@ -12,10 +13,9 @@ const Login = () => {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
-        dispatch(login("hi"));
-        console.log(user);
+        createUserProfile(user);
+        dispatch(login("user"));
       }
-      console.log(user);
     });
   }, [user]);
 
