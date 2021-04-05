@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
+import CartIcon from "./cartIcon";
 
 const Header = () => {
   return (
@@ -17,6 +18,7 @@ const Header = () => {
             <li>
               <Link to="/signin">login</Link>
             </li>
+            <CartIcon />
           </div>
         </div>
       </Container>
