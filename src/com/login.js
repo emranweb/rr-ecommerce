@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import { GoogleSignIn, auth } from "../firebase/config";
+import { login } from "../redux/user";
+import { useSelector, useDispatch } from "react-redux";
 
 const Login = () => {
-  const [user, setUser] = useState(null);
+  const user = useSelector((state) => state.user.user);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(async (user) => {
       if (user) {
-        setUser(user);
+        dispatch(login("hi"));
+        console.log(user);
       }
+      console.log(user);
     });
-  }, []);
+  }, [user]);
 
   return (
     <div className="login-area">
+      <div> User login : {user}</div>
       <Button variant="contained" onClick={() => GoogleSignIn()}>
-        {user ? "signOut" : "Sign in with Google"}
+        Login with Google
       </Button>
     </div>
   );
