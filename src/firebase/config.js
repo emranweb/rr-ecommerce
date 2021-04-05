@@ -20,10 +20,10 @@ const fireStore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-  const GoogleSignIn = ()=>{
+export const GoogleSignIn = ()=>{
       auth.signInWithPopup(provider)
   }
 
 
-  export default GoogleSignIn;
+ 
   
