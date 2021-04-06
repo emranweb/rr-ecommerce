@@ -1,36 +1,31 @@
-import React from 'react';
+import React from "react";
 import Container from "@material-ui/core/Container";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+import CheckoutItem from "./checkoutItem";
 
+const CheckoutPage = () => {
+  const cartItems = useSelector((state) => state.cart);
 
-const CheckoutPage= ()=>{
-   const cartItems= useSelector(state=>state.cart);
-   
-    return (
-      <div className="checkout-page">
-       <Container maxWidth="lg">
-            <div className="checkout-wrapper">
-                <div className="checkout-items">
-                    {cartItems.map(item=>{
-                        return (
-                            <div className="checkout-item" key={item.id+2}>
-                                <img src={item.imageUrl} />
-                                 <span>{item.price}</span>
-                                 <div>
-                                     <span> -</span>
-                                     <span>{item.quantity}</span>
-                                     <span>+</span>
-                                 </div>
-                                 <span>x</span> 
-                            </div>
-                        )
-                    })}
-                </div>
-                <div className="total">{0}</div>
-            </div>
-       </Container>
-      </div>
-   )
-}
+  return (
+    <div className="checkout-page">
+      <Container maxWidth="lg">
+        <div className="checkout-wrapper">
+          <div className="checkout-items">
+            {cartItems.length > 0
+              ? cartItems.map((item) => <CheckoutItem key={item.id} data={item} />)
+              : "empty cart"}
+          </div>
+          <div className="total">
+            {cartItems.length > 0
+              ? cartItems
+                  .map((item) => item.total)
+                  .reduce((acc, curr) => acc + curr)
+              : 0}
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+};
 
 export default CheckoutPage;
