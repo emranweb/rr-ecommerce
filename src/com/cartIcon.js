@@ -7,11 +7,9 @@ import { show } from "../redux/cartshow";
 const CartIcon = () => {
   const showState = useSelector((state) => state.show.value);
   const disptch = useDispatch();
-
-  console.log(showState);
   return (
     <div className="cart-wrapper">
-      <img src={cartImg} onClick={() => disptch(show(true))} alt="cart image" />
+      <img src={cartImg} onClick={() => disptch(show(true))} alt="cart icon" />
       {showState ? <CartBox /> : ""}
     </div>
   );

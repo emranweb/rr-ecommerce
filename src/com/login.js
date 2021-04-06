@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import { GoogleSignIn, auth } from "../firebase/config";
 import { login } from "../redux/user";
@@ -17,7 +17,7 @@ const Login = () => {
         dispatch(login("user"));
       }
     });
-  }, [user]);
+  });
 
   return (
     <div className="login-area">

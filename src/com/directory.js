@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Item from "./item";
 
 const DirectoryData = [
@@ -7,7 +7,7 @@ const DirectoryData = [
     imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
     id: 1,
     linkUrl: "hats",
-  },
+  },  
   {
     title: "jackets",
     imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
@@ -30,11 +30,10 @@ const DirectoryData = [
 ];
 
 const HomeDirectory = () => {
-  const [data, setData] = useState(DirectoryData);
 
   return (
     <div className="directory-menu">
-      {data.map((item) => {
+      {DirectoryData.map((item) => {
         return <Item key={item.id} title={item.title} linkUrl={item.linkUrl}/>;
       })}
     </div>

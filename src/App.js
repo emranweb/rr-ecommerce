@@ -1,4 +1,4 @@
-import React , {useEffect, useState} from "react";
+import React from "react";
 import "./App.scss";
 import { Route, Switch } from "react-router-dom";
 import Header from "./com/header";
@@ -7,7 +7,6 @@ import Header from "./com/header";
 import Home from "./pages/home.js";
 import Shop from "./pages/shop.js";
 import SignIn from "./pages/signIn";
-import {auth} from "./firebase/config";
 
 const NotFound = () => {
   return <h1>Page Not Found</h1>;

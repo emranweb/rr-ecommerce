@@ -7,7 +7,7 @@ export const cartShow = createSlice({
   },
   reducers: {
     show: (state) => {
-      if (state.value == false) {
+      if (state.value === false) {
         state.value = true;
       } else {
         state.value = false;
