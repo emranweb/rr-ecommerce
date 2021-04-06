@@ -7,6 +7,8 @@ import Header from "./com/header";
 import Home from "./pages/home.js";
 import Shop from "./pages/shop.js";
 import SignIn from "./pages/signIn";
+import CheckoutPage from "./pages/checkout";
+
 
 const NotFound = () => {
   return <h1>Page Not Found</h1>;
@@ -27,6 +29,7 @@ function App() {
         <Route exact path="/hats" component={Hats} />
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/checkout" component={CheckoutPage} />
         <Route component={NotFound} />
       </Switch>
     </div>

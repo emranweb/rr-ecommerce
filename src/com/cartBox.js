@@ -1,16 +1,30 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import {removeToCart} from "../redux/cart";
+import{Link} from "react-router-dom";
+import { show } from "../redux/cartshow";
 
 const CartBox = () => {
   const cartItem = useSelector(state => state.cart);
-  console.log(cartItem)
+  const dispatch = useDispatch();
+
   return (
     <div className="cart-box">
-      <div className="cart-items">cartitems</div>
+      <div className="cart-items">{
+        cartItem.map(item=>{
+           return (
+            <div className="cart-item" key={item.id+1}>
+               <img src={item.imageUrl} />
+               <span>{item.price}</span>
+               <span>{item.quantity}</span>
+               <span onClick={()=>dispatch(removeToCart(item))}>x</span>
+         </div>
+           )
+        })
+      }</div>
       <Button variant="contained" color="default">
-        checkout
+        <Link to="/checkout" onClick={()=>dispatch(show(false))}>checkout</Link>
       </Button>
     </div>
   );
