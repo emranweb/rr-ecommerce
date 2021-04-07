@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import { useSelector } from "react-redux";
 import CheckoutItem from "./checkoutItem";
-
+import {v4 as uuid} from "uuid";
 const CheckoutPage = () => {
   const cartItems = useSelector((state) => state.cart);
 
@@ -12,7 +12,7 @@ const CheckoutPage = () => {
         <div className="checkout-wrapper">
           <div className="checkout-items">
             {cartItems.length > 0
-              ? cartItems.map((item) => <CheckoutItem key={item.id} data={item} />)
+              ? cartItems.map((item) => <CheckoutItem key={uuid()} data={item} id={item.id}/>)
               : "empty cart"}
           </div>
           <div className="total">

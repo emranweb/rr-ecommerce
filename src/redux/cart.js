@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import item from "../com/item";
 
 const addToCartFun = (oldItems, newItem) => {
   //check the item exist
@@ -49,15 +50,29 @@ const cartSlice = createSlice({
         return item.id !== action.payload.id;
       });
     },
-    increase:(state,action)=>{
+    increase: (state, action) => {
+      return state.map((item) =>
+        item.id === action.payload
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              total: item.total + item.price,
+            }
+          : item
+      );
+    },
+    decrease:(state,action)=>{
       return state.map(item=>{
-        if(item.id===action.payload){
-          console.log(item)
-        }
+         if(item.id===action.payload){
+            return item.quantity>1 ? {...item, quantity:item.quantity -1, total:item.total - item.price} : item;
+         }else{
+           return item;
+         }
+        
       })
     }
   },
 });
 
-export const { addToCart, removeToCart, increase } = cartSlice.actions;
+export const { addToCart, removeToCart, increase, decrease } = cartSlice.actions;
 export default cartSlice.reducer;
