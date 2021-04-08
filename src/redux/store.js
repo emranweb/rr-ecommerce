@@ -7,7 +7,7 @@ import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import { getDefaultMiddleware } from "@reduxjs/toolkit";
 import directory from "./directory";
-
+import shop from "./shop";
 import {
   FLUSH,
   REHYDRATE,
@@ -21,7 +21,8 @@ const reducers = combineReducers({
   user: userReducer,
   show: cartShow,
   cart: cartReducer,
-  directory: directory
+  directory: directory,
+  shop:shop
 });
 
 const persisConfg = {

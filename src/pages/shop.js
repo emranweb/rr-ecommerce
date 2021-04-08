@@ -1,27 +1,21 @@
-import React from 'react'
-import SHOP_DATA  from "../api/shopdata";
-import Collection from '../com/collection';
-import Container from "@material-ui/core/Container"
+import React from "react";
 
+import Collection from "../com/collection";
+import Container from "@material-ui/core/Container";
+import {useSelector} from "react-redux";
 
-
-class Shop extends React.Component{
-    constructor(){
-        super();
-        this.state = {shop_data: SHOP_DATA};
-    }
-    render(){
-       return (
-           <div className="shop-page">
-               <Container maxWidth="lg">
-               {this.state.shop_data.map(item=>{
-                  return <Collection key={item.id} {...item}/>
-               })}
-               </Container>
-           </div>
-       )
-    }
-}
-
+const Shop = () => {
+ const shop_data = useSelector(state=>state.shop);
+ 
+  return (
+    <div className="shop-page">
+      <Container maxWidth="lg">
+        {shop_data.map((item) => {
+          return <Collection key={item.id} {...item} />;
+        })}
+      </Container>
+    </div>
+  );
+};
 
 export default Shop;

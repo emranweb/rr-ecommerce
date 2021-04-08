@@ -1,7 +1,7 @@
 import React from "react";
 import HomeDirectory from './../com/directory';
 
-const Home = (props) => {
+const Home = () => {
  
   return (
     <div className="home-page">
