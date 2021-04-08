@@ -1,23 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import item from "../com/item";
 
-const addToCartFun = (oldItems, newItem) => {
-  //check the item exist
-  //   console.log(oldItems)
-  //   const itemExist = oldItems.find(item=>item.id===newItem.id);
-  //   console.log(itemExist)
-  //   if(itemExist){
-  //       //find spefic item and add quantiti
-  //       oldItems.map(item=>{
-  //           if(item.id === newItem.id){
-  //               return {...item, quantity: item.quantity+1}
-  //           }else{
-  //               return item;
-  //           }
-  //       })
-  //   }
-  //   return [...oldItems.value, {...newItem.payload, quantity:1}]
-};
 
 const cartSlice = createSlice({
   name: "cart",

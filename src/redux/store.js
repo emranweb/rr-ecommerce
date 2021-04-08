@@ -6,6 +6,8 @@ import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
 import { getDefaultMiddleware } from "@reduxjs/toolkit";
+import directory from "./directory";
+
 import {
   FLUSH,
   REHYDRATE,
@@ -19,6 +21,7 @@ const reducers = combineReducers({
   user: userReducer,
   show: cartShow,
   cart: cartReducer,
+  directory: directory
 });
 
 const persisConfg = {
