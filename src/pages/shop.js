@@ -1,18 +1,22 @@
 import React from "react";
-
-import Collection from "../com/collection";
 import Container from "@material-ui/core/Container";
-import {useSelector} from "react-redux";
+import ShopWrapper from './../com/shopwrapper';
+import { Route, Switch, useRouteMatch} from "react-router-dom";
+import CategoryPage from "./categorypage";
+
+
 
 const Shop = () => {
- const shop_data = useSelector(state=>state.shop);
- 
+  const {path, url} = useRouteMatch();
+
   return (
     <div className="shop-page">
       <Container maxWidth="lg">
-        {shop_data.map((item) => {
-          return <Collection key={item.id} {...item} />;
-        })}
+         <Switch>
+           <Route exact  path={path} component={ShopWrapper} />
+           <Route  path={`${path}/:shopId`} component={CategoryPage} /> 
+         </Switch>
+         
       </Container>
     </div>
   );

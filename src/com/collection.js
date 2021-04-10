@@ -1,6 +1,5 @@
 import React from "react";
 import ShopItem from "./shopItem";
-import {createSelector} from "react-redux";
 
 const Collection = (props) => {
   const { title, items } = props;
