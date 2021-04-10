@@ -1,6 +1,9 @@
 import React from "react";
 import ShopItem from "./shopItem";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1fbe3832f852d7a7e6d3495163efb38b8f2db6b9
 
 const Collection = (props) => {
 

@@ -249,8 +249,20 @@ const shopSlice = createSlice({
       ],
     },
   ],
+  reducers:{
+     category:(state,action)=>{
+         const exist = state.filter(item=>item.routeName===action.payload)
+          if(exist){
+            return exist.map(item=> item.items)
+          }else{
+           return exist
+          }
+     }
+  }
 
 });
+
+export const {category} = shopSlice.actions;
 
 
 export default shopSlice.reducer;
