@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { category } from "../redux/shop";
+import { useSelector} from "react-redux";
+import CategoryItem from "../com/categoryItem";
 
 const CategoryPage = () => {
   const { shopId } = useParams();
-  const disptch = useDispatch();
   const categoyState = useSelector((state) => state.shop);
 
   const categoryItems = categoyState
@@ -14,12 +13,10 @@ const CategoryPage = () => {
 
 
   return (
-    <div>
+    <div className="caterogy-wrapper">
       {categoryItems[0]?categoryItems[0].map((item) => {
        return(
-           <div key={item.id}>
-              <h1>{item.name}</h1>
-           </div>
+           <CategoryItem key={item.id} data={item} />
        )
       }):<h1>Category Not Found</h1>}
     </div>

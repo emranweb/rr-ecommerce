@@ -117,4 +117,8 @@ z-index: 1;
  text-align: right;
 }
 
-
+.caterogy-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
