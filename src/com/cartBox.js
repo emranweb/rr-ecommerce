@@ -10,7 +10,7 @@ const CartBox = () => {
   const dispatch = useDispatch();
 
   const number = cartItem.length;
-  console.log(number)
+
   return (
     <div className="cart-box">
       <div className="cart-items">{
