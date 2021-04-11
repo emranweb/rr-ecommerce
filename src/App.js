@@ -31,6 +31,7 @@ function App() {
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
+        <Route  component={NotFound} />
        
       </Switch>
     </div>

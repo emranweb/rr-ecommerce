@@ -7,7 +7,7 @@ import CategoryPage from "./categorypage";
 
 
 const Shop = () => {
-  const {path, url} = useRouteMatch();
+  const {path} = useRouteMatch();
 
   return (
     <div className="shop-page">

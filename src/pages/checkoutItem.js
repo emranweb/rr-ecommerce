@@ -8,7 +8,7 @@ const CheckoutItem = (props) => {
 
   return (
     <div className="checkout-item">
-      <img src={imageUrl} />
+      <img src={imageUrl} alt="checkout"/>
       <span>{price}</span>
       <div>
         <span onClick={() => dispatch(decrease(props.id))}>-</span>

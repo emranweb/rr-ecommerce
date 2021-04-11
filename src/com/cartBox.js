@@ -9,13 +9,15 @@ const CartBox = () => {
   const cartItem = useSelector(state => state.cart);
   const dispatch = useDispatch();
 
+  const number = cartItem.length;
+  console.log(number)
   return (
     <div className="cart-box">
       <div className="cart-items">{
         cartItem.map(item=>{
            return (
             <div className="cart-item" key={item.id+1}>
-               <img src={item.imageUrl} />
+               <img src={item.imageUrl}  alt="cart box"/>
                <span>{item.price}</span>
                <span>{item.quantity}</span>
                <span onClick={()=>dispatch(removeToCart(item))}>x</span>
